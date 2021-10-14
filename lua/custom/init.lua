@@ -32,17 +32,17 @@ local hooks = require "core.hooks"
 -- examples below:
 
 hooks.add("install_plugins", function(use)
---    use {
---       "max397574/better-escape.nvim",
---       event = "InsertEnter",
---    }
+   --    use {
+   --       "max397574/better-escape.nvim",
+   --       event = "InsertEnter",
+   --    }
    use {
-     "lervag/vimtex",
-     -- "SirVer/ultisnips",
-     -- "honza/vim-snippets"
-     config = function()
-       vim.api.nvim_exec(
-      [[
+      "lervag/vimtex",
+      -- "SirVer/ultisnips",
+      -- "honza/vim-snippets"
+      config = function()
+         vim.api.nvim_exec(
+            [[
       let g:tex_flavor='latex'
       let g:vimtex_compiler_latexmk_engines = {
     \ '_'                : '-xelatex',
@@ -52,39 +52,40 @@ hooks.add("install_plugins", function(use)
       set conceallevel=1
       let g:tex_conceal='abdmg'
       ]],
-      true)
-     end
-     }
+            true
+         )
+      end,
+   }
 
---    use {
---      "conornewton/vim-latex-preview",
--- 
---      config = function()
---      vim.api.nvim_exec(
---      [[
---      let g:latex_pdf_viewer="zathura"
---      let g:latex_engine="xelatex"
---      ]],
---      true)
---       end
--- 
---    }
+   --    use {
+   --      "conornewton/vim-latex-preview",
+   --
+   --      config = function()
+   --      vim.api.nvim_exec(
+   --      [[
+   --      let g:latex_pdf_viewer="zathura"
+   --      let g:latex_engine="xelatex"
+   --      ]],
+   --      true)
+   --       end
+   --
+   --    }
 
---    use {
---      "skywind3000/asyncrun.vim"
---    }
---       use {
---         "xuhdev/vim-latex-live-preview",
---         config = function()
---           vim.api.nvim_exec(
---           [[
---           let g:livepreview_previewer = 'zathura'
---           let g:livepreview_engine = 'xelatex'
--- 
---           ]],
---           true)
---         end
---       }
+   --    use {
+   --      "skywind3000/asyncrun.vim"
+   --    }
+   --       use {
+   --         "xuhdev/vim-latex-live-preview",
+   --         config = function()
+   --           vim.api.nvim_exec(
+   --           [[
+   --           let g:livepreview_previewer = 'zathura'
+   --           let g:livepreview_engine = 'xelatex'
+   --
+   --           ]],
+   --           true)
+   --         end
+   --       }
 end)
 
 -- alternatively, put this in a sub-folder like "lua/custom/plugins/mkdir"
